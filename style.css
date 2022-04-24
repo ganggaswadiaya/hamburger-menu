@@ -64,6 +64,7 @@ body {
   .navbar-link {
     width: 100%;
     display: none;
+    height: 200px;
   }
   .navbar {
     flex-direction: column;
