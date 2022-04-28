@@ -2,6 +2,16 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "SpilineSans";
+  src: url(SplineSans-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url(Poppins/Poppins-Light.ttf);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -11,32 +21,39 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: grey;
-  color: white;
+  background-color: white;
+  color: black;
+  box-shadow: 1px 1px 10px grey;
 }
 
 .brand-title {
-  font-size: 20px;
-  margin: 0.5rem;
+  font-family: "SpilineSans";
+  font-weight: 400;
+  font-size: 30px;
+  margin-left: 58px;
+}
+
+.navbar-link {
+  margin-right: 58px;
 }
 
 .navbar-link ul {
   display: flex;
-  margin: 0;
-  padding: 0;
+  align-items: center;
 }
 .navbar-link li {
   list-style: none;
 }
 .navbar-link li a {
+  font-family: "Poppins";
   text-decoration: none;
-  color: white;
+  color: black;
   padding: 1rem;
   display: block;
 }
 
-.navbar-link li:hover {
-  background-color: #555;
+.navbar-link li a:hover {
+  color: orange;
 }
 
 .toggle-button {
@@ -53,13 +70,94 @@ body {
 .toggle-button .bar {
   height: 3px;
   width: 100%;
-  background-color: white;
+  background-color: black;
   border-radius: 10px;
 }
 
+.signin {
+  background-color: orange;
+  border-radius: 10px;
+  padding: 0;
+}
+
+.navbar-link ul li.signin a {
+  color: white;
+}
+
+.signin:hover {
+  background-color: brown;
+}
+
+.navbar-link ul li.signin a:hover {
+  color: white;
+}
+
+#conten {
+  display: flex;
+  margin-top: 90px;
+}
+
+.conten-isi {
+  width: 550px;
+  text-align: right;
+}
+
+.conten-isi h4 {
+  font-family: "SpilineSans";
+  font-size: 40px;
+}
+
+.conten-isi p {
+  font-family: "Poppins";
+}
+
+.conten-isi a {
+  text-decoration: none;
+  font-family: "Poppins";
+  font-weight: 500;
+  color: white;
+  background-color: orange;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px grey;
+}
+
+.conten-isi a:hover {
+  background-color: brown;
+}
+/* About */
+#about {
+  background-color: orange;
+  border-radius: 40px 40px 0 0;
+}
+.title-about {
+  margin-top: 90px;
+  margin-left: 58px;
+  display: flex;
+  flex-direction: column;
+}
+
+hr {
+  display: none;
+}
+
+.title-about h4 {
+  font-size: 40px;
+  font-family: "SpilineSans";
+  background-image: url("background-title-removebg-preview.png");
+  background-size: 150px 50px;
+  background-repeat: no-repeat;
+}
+
+/* Media Query */
 @media (max-width: 560px) {
+  .brand-title {
+    margin-left: 20px;
+    padding: 10px;
+  }
   .toggle-button {
     display: flex;
+    margin-top: 5px;
   }
   .navbar-link {
     width: 100%;
@@ -73,6 +171,7 @@ body {
   .navbar-link ul {
     flex-direction: column;
     width: 100%;
+    transition: 0.3s;
   }
   .navbar-link li {
     text-align: center;
@@ -82,5 +181,44 @@ body {
   }
   .navbar-link.active {
     display: flex;
+  }
+
+  /* Conten */
+  #conten {
+    flex-direction: column;
+    margin-left: 0;
+  }
+  .conten-isi h4 {
+    width: auto;
+    text-align: center;
+  }
+  .conten-isi p {
+    text-align: center;
+  }
+  .conten-isi {
+    text-align: center;
+  }
+  .conten-hero img {
+    order: 1;
+  }
+  .title-about {
+    text-align: center;
+  }
+  #about {
+    align-items: center;
+    text-align: center;
+  }
+  .title-about h4 {
+    font-size: 30px;
+    background-image: none;
+  }
+  hr {
+    display: flex;
+    background-color: black;
+    border: 0;
+    width: 150px;
+    height: 7px;
+    border-radius: 5px;
+    margin-top: -30px;
   }
 }
